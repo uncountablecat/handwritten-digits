@@ -21,7 +21,7 @@ Two csv files looks like this:
 
 ### Results
 
-##### k-NN classification 
+##### k-NN classification, k = 19
 
 ```
 > source('knn.r')
