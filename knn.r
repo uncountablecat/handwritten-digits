@@ -6,7 +6,7 @@ pca = function(X_highdim) {
 	X_highdim = as.matrix(X_highdim)
 	pcaObj = prcomp(X_highdim);
 
-	dim_reduc_matrix = pcaObj$rotation[,1:40]; # this is a matrix
+	dim_reduc_matrix = pcaObj$rotation[,1:100]; # this is a matrix
 	X_lowdim = X_highdim %*% dim_reduc_matrix;
 
 	return (X_lowdim);
@@ -25,7 +25,7 @@ label_test = test_set[,1]
 label_test = as.factor(label_test)
 X_test = test_set[,2:ncol(test_set)]
 
-model_knn = knn(train=X_train, test=X_test, cl=label_train, k=19)
+model_knn = knn(train=X_train, test=X_test, cl=label_train, k=22)
 
 correct_num = 0
 for (i in 1:nrow(X_test)) {
