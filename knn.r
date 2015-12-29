@@ -2,6 +2,16 @@
 library(class)
 
 
+pca = function(X_highdim) {
+	X_highdim = as.matrix(X_highdim)
+	pcaObj = prcomp(X_highdim);
+
+	dim_reduc_matrix = pcaObj$rotation[,1:40]; # this is a matrix
+	X_lowdim = X_highdim %*% dim_reduc_matrix;
+
+	return (X_lowdim);
+}
+
 raw_data = read.csv('training_set.csv',header=TRUE)
 #test_set = read.csv('test_set.csv',header=TRUE)
 training_set = raw_data[1:40000,]
