@@ -1,5 +1,5 @@
 # Handwritten Digits
-Various classification algorithms applied to handwritten digits
+Various classification algorithms applied to handwritten digits. Each algorithm is implemented using both R and Python.
 
 ### About data set
 
