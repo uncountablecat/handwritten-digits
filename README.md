@@ -19,7 +19,9 @@ Two csv files looks like this:
 |--------|--------|--------|--------|--------
 | 0      | 233    | 7      | ...... | 0
 
-### k-NN classification 
+### Results
+
+##### k-NN classification 
 
 ```
 > source('knn.r')
