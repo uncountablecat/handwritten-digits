@@ -38,3 +38,13 @@ Two csv files looks like this:
 [1] "There are  7000  data points in test set"
 [1] "The model made 6497 correct predictions"
 ```
+
+##### SVM with polynomial kernel, degree = 2
+
+```
+> python svm.py
+Original dataset: (42000, 785)
+Training set has 4000 rows
+Test set has 1000 rows
+Accuracy:  0.965
+```
