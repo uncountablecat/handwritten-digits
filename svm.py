@@ -1,6 +1,10 @@
 from numpy import genfromtxt
 from sklearn.svm import SVC
 import pandas as pd
+import time
+
+
+start = time.clock()
 
 # read csv file
 raw_set = pd.read_csv('training_set.csv', sep=',', header=0)
@@ -9,8 +13,8 @@ raw_set = pd.read_csv('training_set.csv', sep=',', header=0)
 print 'Original dataset:',
 print(raw_set.shape)
 
-training_set = raw_set.iloc[0:4000,:] # pandas uses 0 index, unlike R
-test_set = raw_set.iloc[4000:5000,:]
+training_set = raw_set.iloc[0:40000,:] # pandas uses 0 index, unlike R
+test_set = raw_set.iloc[40000:42000,:]
 
 num_of_train = training_set.shape[0]
 num_of_test = test_set.shape[0]
@@ -35,3 +39,7 @@ for i in range(0,num_of_test):
 
 print('Accuracy: '),
 print(correct_num/num_of_test)
+
+end = time.clock()
+print('Time used: ')
+print(end-start)
