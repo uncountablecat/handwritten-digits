@@ -44,7 +44,8 @@ Two csv files looks like this:
 ```
 > python svm.py
 Original dataset: (42000, 785)
-Training set has 4000 rows
-Test set has 1000 rows
-Accuracy:  0.965
+Training set has 40000 rows
+Test set has 2000 rows
+Accuracy:  0.975
+Time used:  180.010585
 ```
