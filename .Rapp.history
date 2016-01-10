@@ -1,0 +1,6 @@
+setwd('/users/chaoguo/Documents/handwritten-digits')
+source('knn.r')
+source('knn.r')
+source('knn.r')
+source('tree_model.r')
+source('tree_model.r')

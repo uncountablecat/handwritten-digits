@@ -4,8 +4,8 @@ library(randomForest)
 
 raw_data = read.csv('training_set.csv',header=TRUE)
 #test_set = read.csv('test_set.csv',header=TRUE)
-training_set = raw_data[1:3000,]
-test_set = raw_data[3001:10000,]
+training_set = raw_data[1:3003,]
+test_set = raw_data[3031:4000,]
 
 label_train = training_set[,1]
 label_train = as.factor(label_train)
@@ -19,7 +19,7 @@ print('X_test loaded')
 
 set.seed(37)
 
-bagging_digits = randomForest(x=X_train, y=label_train, mytr=400, importance=TRUE)
+bagging_digits = randomForest(x=X_train, y=label_train, mytr=200, importance=TRUE)
 print('Building random forest model......')
 yhat = predict(bagging_digits,newdata=X_test)
 print('Computing predicted values......')

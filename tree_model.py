@@ -1,5 +1,5 @@
 from numpy import genfromtxt
-from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import time
 
@@ -13,8 +13,8 @@ raw_set = pd.read_csv('training_set.csv', sep=',', header=0)
 print 'Original dataset:',
 print(raw_set.shape)
 
-training_set = raw_set.iloc[0:5000,:] # pandas uses 0 index, unlike R
-test_set = raw_set.iloc[5000:6000,:]
+training_set = raw_set.iloc[0:10000,:] # pandas uses 0 index, unlike R
+test_set = raw_set.iloc[10000:14000,:]
 
 num_of_train = training_set.shape[0]
 num_of_test = test_set.shape[0]
@@ -28,7 +28,7 @@ y_train = training_set.iloc[:,0]
 X_test = test_set.iloc[:,1:]
 y_test = test_set.iloc[:,0] 
 
-svm_classifier = SVC(coef0= 0.0001,kernel='poly',degree=3)
+svm_classifier = RandomForestClassifier(n_estimators=300,criterion='entropy')
 svm_classifier.fit(X_train,y_train)
 y_hat = svm_classifier.predict(X_test) # this is a tuple
 

@@ -2,20 +2,10 @@
 library(class)
 
 
-pca = function(X_highdim) {
-	X_highdim = as.matrix(X_highdim)
-	pcaObj = prcomp(X_highdim);
-
-	dim_reduc_matrix = pcaObj$rotation[,1:100]; # this is a matrix
-	X_lowdim = X_highdim %*% dim_reduc_matrix;
-
-	return (X_lowdim);
-}
-
 raw_data = read.csv('training_set.csv',header=TRUE)
 #test_set = read.csv('test_set.csv',header=TRUE)
-training_set = raw_data[1:40000,]
-test_set = raw_data[40001:nrow(raw_data),]
+training_set = raw_data[1:400,]
+test_set = raw_data[401:500,]#nrow(raw_data),]
 
 label_train = training_set[,1]
 label_train = as.factor(label_train)
@@ -25,7 +15,9 @@ label_test = test_set[,1]
 label_test = as.factor(label_test)
 X_test = test_set[,2:ncol(test_set)]
 
-model_knn = knn(train=X_train, test=X_test, cl=label_train, k=22)
+X_train = diffusionmap(X_train)
+
+model_knn = knn(train=X_train, test=X_test, cl=label_train, k=18)
 
 correct_num = 0
 for (i in 1:nrow(X_test)) {
@@ -36,3 +28,4 @@ for (i in 1:nrow(X_test)) {
 
 print(paste('There are ',nrow(X_test),' data points in total'))
 print(paste('The model made ',correct_num,' correct predictions'))
+print(paste('The accuracy is ', correct_num/nrow(X_test)))
