@@ -19,7 +19,7 @@ Two csv files looks like this:
 |--------|--------|--------|--------|--------
 | 0      | 233    | 7      | ...... | 0
 
-### Results
+### Local results
 
 ##### k-NN classification, k = 19
 
@@ -49,3 +49,8 @@ Test set has 2000 rows
 Accuracy:  0.975
 Time used:  180.010585
 ```
+
+### Kaggle result
+| A naive k-NN | SVM with polynomial kernel |
+|--------------|----------------------------|
+| 95.986 %     | 97.871 %                   |
