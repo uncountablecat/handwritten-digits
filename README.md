@@ -52,6 +52,6 @@ Time used:  180.010585
 ```
 
 ### Kaggle result
-| A naive k-NN | SVM with polynomial kernel |
-|--------------|----------------------------|
-| 95.986 %     | 97.871 %                   |
+| A naive k-NN | SVM with polynomial kernel | Random Forest |
+|--------------|----------------------------|---------------|
+| 95.986 %     | 97.871 %                   | 96.70 %       |
